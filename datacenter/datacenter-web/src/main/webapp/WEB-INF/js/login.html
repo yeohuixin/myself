@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+    <title>htmllogin</title>
+    <script>
+        function checkLogin() {
+
+            var loginName = $("#loginName")[0].value;
+            var loginPassword=$("#loginPassword").val();
+            if(loginName=="" || loginPassword==""){
+                alert("login name or login password is null");
+                return;
+            }
+            window.location="/welcome?&loginName="+loginName+"&loginPassword="+loginPassword;
+        }
+    </script>
+</head>
+<body>
+
+<div id="login_putin" class="login_putin">
+    <ul>
+        <li><input id="loginName" class="loginName" type="text"></li>
+        <li><input id="loginPassword" class="loginPassword" type="password"></li>
+    </ul>
+</div>
+<div class="login_btn">
+    <a id="login" class="login" href="javascript:void(0)" onclick="checkLogin()">登陆</a>
+</div>
+</body>
+</html>
