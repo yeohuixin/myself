@@ -19,4 +19,5 @@
 	<!-- 扫描文件（自动将servicec层注入） 注入是在spring-mvc配置文件里面配置生效的 -->
 	<!--<context:component-scan base-package="java" />-->
 	<import resource="spring-config.xml"/>
+
 </beans>

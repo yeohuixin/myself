@@ -15,9 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by yhx on 2016/3/16.
  */
-@Controller("/goodsmanagment")
+@Controller
+@RequestMapping("/goodsmanagment")
 public class GoodsManagment {
-    private static final Logger logger = Logger.getLogger(HelloWord.class);
+    private static final Logger logger = Logger.getLogger(GoodsManagment.class);
 
     @Autowired
     GoodsService goodsService;

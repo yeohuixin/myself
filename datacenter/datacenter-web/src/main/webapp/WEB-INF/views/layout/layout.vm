@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    #parse("layout/head.vm")
+</head>
+##//这个是什么意思？？？
+<body>
+	$screen_content
+</body>
+<footer>
+    #parse("layout/footer.vm")
+</footer>
+</html>

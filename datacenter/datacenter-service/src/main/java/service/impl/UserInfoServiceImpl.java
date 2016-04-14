@@ -1,6 +1,7 @@
 package service.impl;
 
 import dao.UserInfoMapper;
+import dao.bean.SysFuncResource;
 import dao.bean.UserInfo;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import service.UserInfoService;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -34,4 +36,9 @@ public class UserInfoServiceImpl implements UserInfoService {
         UserInfo userInfo = userInfoMapper.selectByLoginname(loginName);
         return userInfo;
     }
+
+//    public List<SysFuncResource> getAllResourceByUserId(String userId) {
+//        return null;
+//    }
+
 }

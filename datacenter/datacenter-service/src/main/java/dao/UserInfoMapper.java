@@ -11,7 +11,7 @@ public interface UserInfoMapper {
     int insertSelective(UserInfo record);
 
     UserInfo selectByPrimaryKey(String userId);
-    UserInfo selectByLoginname(String loginName);
+    UserInfo selectByLoginname(@Param("loginName")String loginName);
     UserInfo selectByLoginnamePassword(@Param("loginName")String loginName,@Param("password")String password);
 
     int updateByPrimaryKeySelective(UserInfo record);
