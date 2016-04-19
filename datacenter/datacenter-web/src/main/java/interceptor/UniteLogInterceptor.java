@@ -17,6 +17,7 @@ public class UniteLogInterceptor implements HandlerInterceptor {
 
     private static final Logger logger = Logger.getLogger(UniteLogInterceptor.class);
 
+    //保证现成安全
     private NamedThreadLocal<Long> startTimeThreadLocal =
             new NamedThreadLocal<Long>("StopWatch-StartTime");
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -65,7 +66,7 @@ public class UniteLogInterceptor implements HandlerInterceptor {
         long useTime = endTime - startTime;
 
         if(useTime > 50L){
-            logger.info(request.getRequestURI() + " consum time is " + useTime);
+            logger.info(request.getRequestURI() + " consume time is " + useTime);
         }
     }
 }

@@ -41,7 +41,7 @@ public class CheckPrivilegeInterceptor  implements HandlerInterceptor {
         }
         // 如果未登录
         if (user == null) {
-            if (url.contains("welcome/welcome") || url.contains("/platform/toLogin") || url.contains("/platform/login") || url.equals("/") || url.equals("")) {//为了兼容IndexController的index方法
+            if (url.contains("/platform/toLogin") || url.contains("/platform/login") || url.equals("/") || url.equals("")) {//为了兼容IndexController的index方法
                 // 如果是去登录，就放行
                 return true;
             } else {

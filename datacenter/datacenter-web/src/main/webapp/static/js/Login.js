@@ -15,3 +15,6 @@ $(document).ready(function () {
         }
     });
 });
+function logOut() {
+    window.location="/platform/logout";
+}

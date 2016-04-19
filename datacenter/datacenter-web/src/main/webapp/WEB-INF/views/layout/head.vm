@@ -2,3 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>数据中心</title>
 <link rel="icon" href="/static/images/favicon1.ico">
+<script type="text/javascript" src="$request.getContextPath()/static/js/jquery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="$request.getContextPath()/static/js/Login.js"></script>
+<script type="text/javascript" src="$request.getContextPath()/static/js/welcome.js"></script>
+<script type="text/javascript" src="$request.getContextPath()/static/js/GoodManage/GoodManage.js"></script>
+

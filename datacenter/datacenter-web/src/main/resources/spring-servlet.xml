@@ -79,12 +79,14 @@
         <mvc:interceptor>
             <mvc:mapping path="/platform/**"/>
             <mvc:mapping path="/welcome/**"/>
+            <mvc:mapping path="/"/>
             <!--统一日志处理 -->
             <bean id="uniteLogInterceptor" class="interceptor.UniteLogInterceptor"/>
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/platform/**"/>
             <mvc:mapping path="/welcome/**"/>
+            <mvc:mapping path="/"/>
             <!--权限校验 -->
             <bean id="checkPrivilegeInterceptor" class="interceptor.CheckPrivilegeInterceptor"/>
         </mvc:interceptor>

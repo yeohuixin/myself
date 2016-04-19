@@ -1,12 +1,6 @@
-/**
- * Created by yhx on 2016/4/12.
- */
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-    welcome!
-</head>
+    #parse("layout/console_layout.vm")
+    #parse("layout/head.vm")
 <body>
-欢迎！
+    欢迎！
 </body>
-</html>

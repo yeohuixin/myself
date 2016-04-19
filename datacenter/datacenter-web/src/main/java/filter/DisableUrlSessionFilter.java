@@ -13,7 +13,6 @@ public class DisableUrlSessionFilter implements Filter {
     /**
      * Filters requests to disable URL-based session identifiers.
      */
-    @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         // skip non-http requests
         if (!(request instanceof HttpServletRequest)) {
@@ -37,12 +36,10 @@ public class DisableUrlSessionFilter implements Filter {
     /**
      * Unused.
      */
-    @Override
     public void init(FilterConfig config) throws ServletException {}
 
     /**
      * Unused.
      */
-    @Override
     public void destroy() {}
 }
