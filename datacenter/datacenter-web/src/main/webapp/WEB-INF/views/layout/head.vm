@@ -6,4 +6,55 @@
 <script type="text/javascript" src="$request.getContextPath()/static/js/Login.js"></script>
 <script type="text/javascript" src="$request.getContextPath()/static/js/welcome.js"></script>
 <script type="text/javascript" src="$request.getContextPath()/static/js/GoodManage/GoodManage.js"></script>
+<script type="text/javascript" src="$request.getContextPath()/static/js/pccore.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<link href="/static/js/GoodManage/resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+<link href="/static/js/GoodManage/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+<link href="/static/js/GoodManage/data/styles.css" type="text/css" rel="stylesheet"/>
+<link href="/static/js/GoodManage/files/page_1/styles.css" type="text/css" rel="stylesheet"/>
+<link href="/static/js/bootstrap-3.3.5-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet"/>
+<link href="/static/js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet"/>
+<link href="/static/js/bootstrap-3.3.5-dist/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<link href="/static/js/bootstrap-3.3.5-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+##<script src="/static/js/GoodManage/resources/scripts/jquery-1.7.1.min.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+##    这个页面需要单独引入？？？？？
 
+<script type="text/javascript" src="/static/js/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/axQuery.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/globals.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axutils.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/annotation.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/axQuery.std.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/doc.js"></script>
+<script src="/static/js/GoodManage/data/document.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/messagecenter.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/events.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/action.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/expr.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/geometry.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/flyout.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/ie.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/model.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/repeater.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/sto.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/utils.temp.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/variables.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/drag.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/move.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/visibility.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/style.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/adaptive.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/tree.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/init.temp.js"></script>
+<script src="/static/js/GoodManage/files/page_1/data.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/legacy.js"></script>
+<script src="/static/js/GoodManage/resources/scripts/axure/viewer.js"></script>
+<script type="text/javascript">
+        $axure.utils.getTransparentGifPath = function() { return '/static/js/GoodManage/resources//static/js/GoodManage/images/transparent.gif'; };
+        $axure.utils.getOtherPath = function() { return '/static/js/GoodManage/resources/Other.html'; };
+        $axure.utils.getReloadPath = function() { return '/static/js/GoodManage/resources/reload.html'; };
+</script>
