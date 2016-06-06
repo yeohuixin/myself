@@ -2,6 +2,8 @@ package dao;
 
 import dao.bean.GoodsBean;
 
+import java.util.List;
+
 public interface GoodsMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,6 @@ public interface GoodsMapper {
     int updateByPrimaryKeySelective(GoodsBean record);
 
     int updateByPrimaryKey(GoodsBean record);
+
+    List<GoodsBean> selectAll();
 }

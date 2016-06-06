@@ -11,6 +11,7 @@ import service.GoodsService;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -35,4 +36,12 @@ public class GoodsServiceImpl implements GoodsService {
         int count = goodsMapper.insert(goodsBean);
         return count;
     }
+
+    public List<GoodsBean> selectAll(){
+        logger.info("select all start");
+        List<GoodsBean> goodsBeens = goodsMapper.selectAll();
+        return goodsBeens;
+    }
+
+
 }

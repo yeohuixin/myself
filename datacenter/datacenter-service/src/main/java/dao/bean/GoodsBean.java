@@ -16,6 +16,16 @@ public class GoodsBean {
 
     private String goodsname;
 
+    private Double goodsunitprice;
+
+    public Double getGoodsunitprice() {
+        return goodsunitprice;
+    }
+
+    public void setGoodsunitprice(Double goodsunitprice) {
+        this.goodsunitprice = goodsunitprice;
+    }
+
     public String getId() {
         return id;
     }
@@ -54,5 +64,17 @@ public class GoodsBean {
 
     public void setGoodsname(String goodsname) {
         this.goodsname = goodsname == null ? null : goodsname.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "GoodsBean{" +
+                "id='" + id + '\'' +
+                ", updatetime=" + updatetime +
+                ", createtime=" + createtime +
+                ", goodscount=" + goodscount +
+                ", goodsname='" + goodsname + '\'' +
+                ", goodsunitprice=" + goodsunitprice +
+                '}';
     }
 }

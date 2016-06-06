@@ -15,6 +15,7 @@ import dao.bean.GoodsBean;
 import service.UserInfoService;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -31,6 +32,7 @@ public class Test {
         UUID id = UUID.randomUUID();
         GoodsBean goodsBean = new GoodsBean();
         goodsBean.setId(id.toString());
+        goodsBean.setGoodsunitprice(12.12);
         goodsBean.setGoodscount(3L);
         goodsBean.setGoodsname("app");
         goodsService.save(goodsBean);
@@ -54,6 +56,21 @@ public class Test {
         UserInfo userInfo = userInfoService.getUserInfoByLoginNamePassword("admin","123456");
         if(userInfo != null){
             System.out.println("ok");
+        }
+    }
+
+    @org.junit.Test
+    public void test4(){
+        List<GoodsBean> goodsBeanList = goodsService.selectAll();
+
+
+        if(goodsBeanList != null && !goodsBeanList.isEmpty()){
+
+            System.out.println("ok");
+
+            for(GoodsBean goodsBean: goodsBeanList){
+                System.out.println("goods is " + goodsBean);
+            }
         }
     }
 }
