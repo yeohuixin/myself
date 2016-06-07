@@ -1,11 +1,11 @@
-package dao.bean;
+package vo;
 
 import java.util.Date;
 
 /**
- * Created by yhx on 2016/3/17.
+ * Created by yhx on 2016/6/6.
  */
-public class GoodsBean {
+public class GoodsVO {
     private String id;
 
     private Date updatetime;
@@ -15,16 +15,6 @@ public class GoodsBean {
     private Long goodscount;
 
     private String goodsname;
-
-    private Double goodsunitprice;
-
-    public Double getGoodsunitprice() {
-        return goodsunitprice;
-    }
-
-    public void setGoodsunitprice(Double goodsunitprice) {
-        this.goodsunitprice = goodsunitprice;
-    }
 
     public String getId() {
         return id;
@@ -66,15 +56,4 @@ public class GoodsBean {
         this.goodsname = goodsname == null ? null : goodsname.trim();
     }
 
-    @Override
-    public String toString() {
-        return "GoodsBean{" +
-                "id='" + id + '\'' +
-                ", updatetime=" + updatetime +
-                ", createtime=" + createtime +
-                ", goodscount=" + goodscount +
-                ", goodsname='" + goodsname + '\'' +
-                ", goodsunitprice=" + goodsunitprice +
-                '}';
-    }
 }

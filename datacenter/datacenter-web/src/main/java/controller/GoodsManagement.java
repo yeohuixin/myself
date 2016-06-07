@@ -16,7 +16,9 @@ import utils.ResultCode;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by yhx on 2016/3/16.
@@ -67,6 +69,7 @@ public class GoodsManagement {
         GoodsBean goodsBean = new GoodsBean();
         goodsBean.setGoodsname(goodsName);
         goodsBean.setGoodscount(Long.valueOf(goodsCount));
+        goodsBean.setGoodsunitprice(Double.valueOf(goodsUnitPrice));
         goodsBean.setCreatetime(new Date());
         try{
             goodsService.save(goodsBean);
@@ -82,5 +85,24 @@ public class GoodsManagement {
         return JsonUtils.toJson(result, type);
     }
 
+    @RequestMapping("/selectGoods")
+    public
+    @ResponseBody
+    String selectGoods(HttpServletRequest request, HttpServletResponse response){
+        logger.info("select goods now");
+        List<GoodsBean> goodsBeanList = new ArrayList<GoodsBean>();
 
+        try{
+            goodsBeanList = goodsService.selectAll();
+        }catch (Exception e){
+            logger.info("error info is " + e);
+        }
+        Result<List<GoodsBean>> result = new Result<List<GoodsBean>>();
+        result.setCode(ResultCode.SUCCESS);
+        result.setMsg("success");
+        result.setTimestamp(new Date());
+        result.setData(goodsBeanList);
+        Type type = new TypeToken<Result<List<GoodsBean>>>(){}.getType();
+        return JsonUtils.toJson(result, type);
+    }
 }
