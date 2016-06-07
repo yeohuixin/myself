@@ -1,3 +1,10 @@
+
+<div>
+    <p>
+        "-------------------------------------------"
+    </p>
+</div>
+<body>
 <div style="float: left;">
     <p id="addRole" class="nbtn nbtn-primary" onclick="toAddGoodsForm()"><img src="/static/js/GoodManage/images/+.png"><a>增加物品</a></p>
 </div>
@@ -182,3 +189,4 @@
         </div>
     </div>
 </div>
+</body>
