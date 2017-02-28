@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+    #parse("layout/console_layout.vm")
+    #parse("layout/head.vm")
+<body>
+    欢迎！
+</body>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="2.13" errors="1" skipped="0" tests="4" name="Test">
+  <properties>
+    <property name="idea.version" value="2016.1.4"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="D:\Program Files\Java\jdk1.7.0_60\jre\bin"/>
+    <property name="java.vm.version" value="24.60-b09"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="idea.launcher.port" value="7533"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\myself\git\datacenter\myself\datacenter"/>
+    <property name="java.runtime.version" value="1.7.0_60-b19"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="D:\Program Files\Java\jdk1.7.0_60\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\QDHL\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 8.1"/>
+    <property name="classworlds.conf" value="D:\Program Files (x86)\IntelliJ IDEA 2016.1.3\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="D:\Program Files\Java\jdk1.7.0_60\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\apache-maven-3.2.2\bin;D:\Program Files\Java\jdk1.7.0_60\bin;D:\Program Files\nodejs\;C:\Users\QDHL\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\OpenVPN\bin;C:\Users\QDHL\AppData\Roaming\npm;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.3"/>
+    <property name="user.home" value="C:\Users\QDHL"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="idea.launcher.bin.path" value="D:\Program Files (x86)\IntelliJ IDEA 2016.1.3\bin"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="QDHL"/>
+    <property name="java.class.path" value="D:\Program Files (x86)\IntelliJ IDEA 2016.1.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.4.jar;D:\Program Files (x86)\IntelliJ IDEA 2016.1.3\lib\idea_rt.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="D:\Program Files\Java\jdk1.7.0_60\jre"/>
+    <property name="sun.java.command" value="com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=2016.1.4 package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_60"/>
+    <property name="java.ext.dirs" value="D:\Program Files\Java\jdk1.7.0_60\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="D:\Program Files\Java\jdk1.7.0_60\jre\lib\resources.jar;D:\Program Files\Java\jdk1.7.0_60\jre\lib\rt.jar;D:\Program Files\Java\jdk1.7.0_60\jre\lib\sunrsasign.jar;D:\Program Files\Java\jdk1.7.0_60\jre\lib\jsse.jar;D:\Program Files\Java\jdk1.7.0_60\jre\lib\jce.jar;D:\Program Files\Java\jdk1.7.0_60\jre\lib\charsets.jar;D:\Program Files\Java\jdk1.7.0_60\jre\lib\jfr.jar;D:\Program Files\Java\jdk1.7.0_60\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="D:\Program Files (x86)\IntelliJ IDEA 2016.1.3\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="1.83" classname="Test" name="test1">
+    <error message="
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;createtime&apos; cannot be null
+### The error may involve dao.GoodsMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into goods (id, updatetime, createtime, goodsunitprice,       goodscount, goodsname)     values (?, ?, ?,?,       ?, ?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;createtime&apos; cannot be null
+; SQL []; Column &apos;createtime&apos; cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;createtime&apos; cannot be null" type="org.springframework.dao.DataIntegrityViolationException">org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;createtime&apos; cannot be null
+### The error may involve dao.GoodsMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into goods (id, updatetime, createtime, goodsunitprice,       goodscount, goodsname)     values (?, ?, ?,?,       ?, ?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;createtime&apos; cannot be null
+; SQL []; Column &apos;createtime&apos; cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;createtime&apos; cannot be null
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:86)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:80)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371)
+	at com.sun.proxy.$Proxy11.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:240)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:46)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:43)
+	at com.sun.proxy.$Proxy12.insert(Unknown Source)
+	at service.impl.GoodsServiceImpl.save(GoodsServiceImpl.java:36)
+	at Test.test1(Test.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:83)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;createtime&apos; cannot be null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1041)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2834)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1379)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:493)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:55)
+	at com.sun.proxy.$Proxy15.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:41)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:66)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:45)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:100)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:75)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:137)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:358)
+	... 41 more
+</error>
+    <system-out>2017-02-28 18:53:32.777 DEBUG Ignored because not a concrete top-level class: file [D:\myself\git\datacenter\myself\datacenter\datacenter-service\target\classes\dao\bean\GoodsBean.class] [main](ClassPathScanningCandidateComponentProvider.java:279)[org.mybatis.spring.mapper.ClassPathMapperScanner:findCandidateComponents]
+2017-02-28 18:53:32.782 DEBUG Ignored because not a concrete top-level class: file [D:\myself\git\datacenter\myself\datacenter\datacenter-service\target\classes\dao\bean\SysFuncResource.class] [main](ClassPathScanningCandidateComponentProvider.java:279)[org.mybatis.spring.mapper.ClassPathMapperScanner:findCandidateComponents]
+2017-02-28 18:53:32.785 DEBUG Ignored because not a concrete top-level class: file [D:\myself\git\datacenter\myself\datacenter\datacenter-service\target\classes\dao\bean\UserInfo.class] [main](ClassPathScanningCandidateComponentProvider.java:279)[org.mybatis.spring.mapper.ClassPathMapperScanner:findCandidateComponents]
+2017-02-28 18:53:32.786 DEBUG Identified candidate component class: file [D:\myself\git\datacenter\myself\datacenter\datacenter-service\target\classes\dao\GoodsMapper.class] [main](ClassPathScanningCandidateComponentProvider.java:273)[org.mybatis.spring.mapper.ClassPathMapperScanner:findCandidateComponents]
+2017-02-28 18:53:32.786 DEBUG Identified candidate component class: file [D:\myself\git\datacenter\myself\datacenter\datacenter-service\target\classes\dao\UserInfoMapper.class] [main](ClassPathScanningCandidateComponentProvider.java:273)[org.mybatis.spring.mapper.ClassPathMapperScanner:findCandidateComponents]
+2017-02-28 18:53:32.788 WARN  Skipping MapperFactoryBean with name &apos;goodsMapper&apos; and &apos;dao.GoodsMapper&apos; mapperInterface. Bean already defined with the same name! [main](ClassPathMapperScanner.java:226)[org.mybatis.spring.mapper.ClassPathMapperScanner:checkCandidate]
+2017-02-28 18:53:32.789 DEBUG Creating MapperFactoryBean with name &apos;userInfoMapper&apos; and &apos;dao.UserInfoMapper&apos; mapperInterface [main](ClassPathMapperScanner.java:164)[org.mybatis.spring.mapper.ClassPathMapperScanner:doScan]
+2017-02-28 18:53:32.884 DEBUG Logging initialized using &apos;class org.apache.ibatis.logging.slf4j.Slf4jImpl&apos; adapter. [main](LogFactory.java:124)[org.apache.ibatis.logging.LogFactory:setImplementation]
+2017-02-28 18:53:32.980 ERROR maxIdle is deprecated [main](DruidAbstractDataSource.java:918)[com.alibaba.druid.pool.DruidAbstractDataSource:setMaxIdle]
+2017-02-28 18:53:33.371 INFO  {dataSource-1} inited [main](DruidDataSource.java:638)[com.alibaba.druid.pool.DruidDataSource:init]
+2017-02-28 18:53:33.497 DEBUG Parsed configuration file: &apos;class path resource [mybatis-config.xml]&apos; [main](SqlSessionFactoryBean.java:431)[org.mybatis.spring.SqlSessionFactoryBean:buildSqlSessionFactory]
+2017-02-28 18:53:33.617 DEBUG Parsed mapper file: &apos;file [D:\myself\git\datacenter\myself\datacenter\datacenter-service\target\classes\mapper\GoodsMapper.xml]&apos; [main](SqlSessionFactoryBean.java:472)[org.mybatis.spring.SqlSessionFactoryBean:buildSqlSessionFactory]
+2017-02-28 18:53:33.665 DEBUG Parsed mapper file: &apos;file [D:\myself\git\datacenter\myself\datacenter\datacenter-service\target\classes\mapper\UserInfoMapper.xml]&apos; [main](SqlSessionFactoryBean.java:472)[org.mybatis.spring.SqlSessionFactoryBean:buildSqlSessionFactory]
+2017-02-28 18:53:33.824 INFO  goods Mapper start now!! [main](GoodsServiceImpl.java:30)[service.impl.GoodsServiceImpl:save]
+2017-02-28 18:53:33.835 DEBUG Creating a new SqlSession [main](SqlSessionUtils.java:104)[org.mybatis.spring.SqlSessionUtils:getSqlSession]
+2017-02-28 18:53:33.843 DEBUG SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60102b51] was not registered for synchronization because synchronization is not active [main](SqlSessionUtils.java:140)[org.mybatis.spring.SqlSessionUtils:getSqlSession]
+2017-02-28 18:53:33.861 DEBUG JDBC Connection [com.mysql.jdbc.JDBC4Connection@25d61b55] will not be managed by Spring [main](SpringManagedTransaction.java:86)[org.mybatis.spring.transaction.SpringManagedTransaction:openConnection]
+2017-02-28 18:53:33.863 DEBUG ooo Using Connection [com.mysql.jdbc.JDBC4Connection@25d61b55] [main](BaseJdbcLogger.java:132)[dao.GoodsMapper.insert:debug]
+2017-02-28 18:53:33.871 DEBUG ==&gt;  Preparing: insert into goods (id, updatetime, createtime, goodsunitprice, goodscount, goodsname) values (?, ?, ?,?, ?, ?)  [main](BaseJdbcLogger.java:132)[dao.GoodsMapper.insert:debug]
+2017-02-28 18:53:33.913 DEBUG ==&gt; Parameters: 47bfaccc-453e-4ee4-9059-be7aa0eabf92(String), null, null, 12.12(Double), 3(Long), app(String) [main](BaseJdbcLogger.java:132)[dao.GoodsMapper.insert:debug]
+2017-02-28 18:53:33.918 DEBUG Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60102b51] [main](SqlSessionUtils.java:168)[org.mybatis.spring.SqlSessionUtils:closeSqlSession]
+</system-out>
+  </testcase>
+  <testcase time="0.022" classname="Test" name="test3"/>
+  <testcase time="0.011" classname="Test" name="test2"/>
+  <testcase time="0.007" classname="Test" name="test4"/>
+</testsuite>
