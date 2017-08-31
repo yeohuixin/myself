@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import service.GoodsService;
@@ -61,6 +62,11 @@ public class GoodsManagement {
     @ResponseBody
     String addGoods(HttpServletRequest request, HttpServletResponse response){
         logger.info("add goods now");
+        try{
+            request.setCharacterEncoding("UTF-8");
+        }catch (Exception e){
+            logger.error("requst error info is " + e);
+        }
         String goodsName = request.getParameter("goodsName");
         String goodsCount = request.getParameter("goodsCount");
         String goodsUnitPrice = request.getParameter("goodsUnitPrice");
@@ -85,11 +91,23 @@ public class GoodsManagement {
         return JsonUtils.toJson(result, type);
     }
 
-    @RequestMapping("/selectGoods")
+    /**
+     * 增加了produces 解决了返回前端乱码的问题
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/selectGoods", method = {RequestMethod.GET}, produces = "text/html;charset=UTF-8")
+//    @RequestMapping(value = "/selectGoods")
     public
     @ResponseBody
     String selectGoods(HttpServletRequest request, HttpServletResponse response){
         logger.info("select goods now");
+//        try{
+//            request.setCharacterEncoding("UTF-8");
+//        }catch (Exception e){
+//            logger.error("requst error info is " + e);
+//        }
         List<GoodsBean> goodsBeanList = new ArrayList<GoodsBean>();
 
         try{
@@ -99,10 +117,29 @@ public class GoodsManagement {
         }
         Result<List<GoodsBean>> result = new Result<List<GoodsBean>>();
         result.setCode(ResultCode.SUCCESS);
+
         result.setMsg("success");
         result.setTimestamp(new Date());
         result.setData(goodsBeanList);
         Type type = new TypeToken<Result<List<GoodsBean>>>(){}.getType();
-        return JsonUtils.toJson(result, type);
+        String coding = null;
+//        coding = response.getCharacterEncoding();
+//        String type1 = response.getContentType();
+//        logger.info("coding is " + coding + " type is " + type1);
+//        response.setCharacterEncoding("utf-8");
+        coding = response.getCharacterEncoding();
+        logger.info("coding after is " + coding);
+//        response.setContentType("text/html;charset=utf-8");
+        String ifo = JsonUtils.toJson(result, type);
+        logger.info("info is " + ifo);
+        /**
+         * 如果没有增加produce 需要直接使用response的writer写入不会有乱码，不能直接返回json字符串
+         */
+//        try {
+//            response.getWriter().print(ifo);
+//        }catch (Exception e){
+//
+//        }
+        return ifo;
     }
 }

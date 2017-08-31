@@ -40,6 +40,7 @@ public class GoodsServiceImpl implements GoodsService {
     public List<GoodsBean> selectAll(){
         logger.info("select all start");
         List<GoodsBean> goodsBeens = goodsMapper.selectAll();
+        logger.info("all info is " + goodsBeens.get(1));
         return goodsBeens;
     }
 

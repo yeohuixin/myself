@@ -1,4 +1,4 @@
-CREATE TABLE `NewTable` (
+CREATE TABLE `goods` (
 `id`  varchar(40) NOT NULL ,
 `goodsunitprice`  float(20,2) NULL ,
 `goodscount`  integer NULL ,
