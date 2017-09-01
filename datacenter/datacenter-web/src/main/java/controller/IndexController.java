@@ -34,7 +34,8 @@ public class IndexController {
     public @ResponseBody
     ModelAndView login(HttpServletRequest request, @ModelAttribute UserInfo user, Errors errors) {
         ModelAndView modelAndView = new ModelAndView("platform/login");
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(false);
+        String id = session.getId();
         UserInfo user1 = SessionUtils.getCurrentUser(request);
         List<String> resourceNameList = (List<String>) session.getAttribute("resourceNameList");
         if(user1 != null){//已登录
