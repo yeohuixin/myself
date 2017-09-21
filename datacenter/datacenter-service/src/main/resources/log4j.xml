@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p:%m %n==> %l%n%n"/>
+        </layout>
+    </appender>
+
+    <!-- 输出日志到文件  文件大小到达指定尺寸的时候产生一个新的文件 -->
+    <appender name="railyFile"
+              class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="/opt/tomcat_app/logs/shark.log"></param>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="Threshold" value="info"></param>
+        <param name="Append" value="true"></param>
+        <param name="MaxFileSize" value="500MB"></param>
+        <param name="MaxBackupIndex" value="100"></param>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] {%c:%L}-%m%n"></param>
+        </layout>
+    </appender>
+
+    <!-- 输出日志到文件  按天分割 -->
+    <appender name="dailyFile"
+              class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${CATALINA_BASE}/logs/shark.log"></param>
+        <param name="DatePattern" value="'_'yyyy-MM-dd'.log'" />
+        <param name="ImmediateFlush" value="true"/>
+        <param name="Threshold" value="info"></param>
+        <param name="Append" value="true"></param>
+        <param name="MaxBackupIndex" value="7"></param>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%c]-[%p] %m%n"></param>
+        </layout>
+    </appender>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="stdout"/>
+        <!--<appender-ref ref="dailyFile"/>-->
+        <!--<appender-ref ref="railyFile"/>-->
+    </root>
+</log4j:configuration>
