@@ -17,19 +17,7 @@
     <context:component-scan base-package="controller"/>
 
     <mvc:annotation-driven/>
-    <!--<mvc:annotation-driven>-->
-        <!--<mvc:message-converters>-->
-            <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
-                <!--<property name="supportedMediaTypes">-->
-                    <!--<list>-->
-                        <!--<value>application/json;charset=UTF-8</value>-->
-                    <!--</list>-->
-                <!--</property>-->
-            <!--</bean>-->
-        <!--</mvc:message-converters>-->
-    <!--</mvc:annotation-driven>-->
-    <!--<context:component-scan base-package="login"/>-->
-    <!-- 这一条很重要啊。查了好久-->
+
     <!-- 避免IE在ajax请求时，返回json出现下载 -->
     <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
@@ -38,21 +26,6 @@
             </list>
         </property>
     </bean>
-        <!--配置拦截器-->
-    <!--<bean id="timeTestInterceptor"-->
-          <!--class="interceptor.Request4Interceptor"/>-->
-    <!--<bean id="loginInterceptor"-->
-          <!--class="interceptor.LoginInterceptor"/>-->
-    <!--&lt;!&ndash; HandlerMapping 默认已经配置 &ndash;&gt;-->
-    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">-->
-        <!--<property name="interceptors">-->
-            <!--<list>-->
-                <!--<ref bean="timeTestInterceptor"/>-->
-                <!--<ref bean="loginInterceptor"/>-->
-            <!--</list>-->
-        <!--</property>-->
-    <!--</bean>-->
-
 
     <bean id="velocityConfig"
           class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
@@ -99,5 +72,4 @@
             <bean id="checkPrivilegeInterceptor" class="interceptor.CheckPrivilegeInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
-
 </beans>

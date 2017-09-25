@@ -27,7 +27,7 @@
         <property name="triggers">
             <list>
                 <!-- 所有的调度列表 -->
-                <ref local="myPrintTrigger" />
+                <!--<ref local="myPrintTrigger" />-->
             </list>
         </property>
     </bean>
