@@ -3,6 +3,7 @@
 
 
     <script type="text/javascript" src="$request.getContextPath()/static/js/jquery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="$request.getContextPath()/static/js/jquery/jquery.dataTables.js"></script>
     <script type="text/javascript" src="$request.getContextPath()/static/js/Login.js"></script>
     <script type="text/javascript" src="$request.getContextPath()/static/js/welcome.js"></script>
     <script type="text/javascript" src="$request.getContextPath()/static/js/GoodManage/GoodManage.js"></script>

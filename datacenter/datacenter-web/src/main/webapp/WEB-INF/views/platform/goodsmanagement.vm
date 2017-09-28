@@ -16,7 +16,7 @@
                     <div class="pull-right">
                         <div class="input-group">
                             <input id="searchInput" type="text" placeholder="按物品名称搜索"/>
-                            <input type="button" id="goodSearchButton" class="nbtn" value="搜索"/>
+                            <input id="goodSearchButton" type="button" class="nbtn" value="搜索"/>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
     <div class="modal fade" id="addGoodsModal" data-backdrop="static" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content" style="width:700px;">
+            <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
                             aria-hidden="true">&times;</span><span

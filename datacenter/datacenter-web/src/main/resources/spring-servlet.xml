@@ -50,7 +50,19 @@
         <property name="contentType" value="text/html;charset=UTF-8" />
     </bean>
 
+    <bean id="logout" class="log.ControllerLog"></bean>
 
+    <aop:config>
+        <aop:pointcut id="pointcutTarget" expression="execution(public * controller.GoodsManagement.*(..))"/>
+        <aop:aspect id="userAspect" ref="logout">
+            <aop:after-returning
+                    pointcut-ref="pointcutTarget"
+                    arg-names="joinPoint,retValue"
+                    returning="retValue"
+                    method="logOut"
+            />
+        </aop:aspect>
+    </aop:config>
     <mvc:default-servlet-handler/>
     <!-- static resources -->
     <mvc:resources location="/static/" mapping="/static/**" cache-period="864000" /><!-- 24*3600*10 -->
