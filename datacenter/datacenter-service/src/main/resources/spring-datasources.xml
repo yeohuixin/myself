@@ -95,12 +95,14 @@
         <property name="defaultTargetDataSource" ref="dataSourceMaster"></property>
     </bean>
 
+    <bean id="daoExecutTime" class="Utils.DaoExecutTime"/>
 
     <!-- mybatis文件配置，扫描所有mapper文件 -->
     <bean id="sqlSessionFactory"
           class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dataSource"
-          p:mapperLocations="classpath:mapper/*.xml"/>
+          p:mapperLocations="classpath:mapper/*.xml"
+          p:plugins-ref="daoExecutTime"/>
     <!-- configLocation为mybatis属性 mapperLocations为所有mapper-->
 
     <!-- spring与mybatis整合配置，扫描所有dao -->

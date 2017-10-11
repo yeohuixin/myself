@@ -1,9 +1,15 @@
 package core.dao;
 
+/**
+ * 选择数据源
+ */
 public class DataSourceTypeManager {
 
     public static int test1 = 0;
 
+    /**
+     * 与配置文件的bean名称一致
+     */
     public static final String MASTER = "dataSourceMaster";
 
     public static final String SLAVE = "dataSourceSlave0";
@@ -12,6 +18,7 @@ public class DataSourceTypeManager {
 
     public static String get() {
         String dataSource = null;
+        // 数据源切换测试
 //        if((test1++)%2 == 0){
 //            dataSource = MASTER;
 //        }else {

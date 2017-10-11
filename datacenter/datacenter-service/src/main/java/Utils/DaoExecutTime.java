@@ -1,6 +1,9 @@
 package Utils;
 
+import core.dao.DataSourceTypeManager;
 import org.apache.ibatis.executor.Executor;
+import org.apache.ibatis.executor.statement.StatementHandler;
+import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.plugin.*;
 
@@ -11,11 +14,16 @@ import java.util.Properties;
  */
 @Intercepts({@Signature(
         type = Executor.class,
-        method = "select",
+        method = "update",
         args = {MappedStatement.class, Object.class})})
 public class DaoExecutTime implements Interceptor {
 
     public Object intercept(Invocation invocation) throws Throwable {
+//        StatementHandler statementHandler = (StatementHandler) invocation.getTarget();
+//        BoundSql boundSql = statementHandler.getBoundSql();
+//        String sql = boundSql.getSql();
+        DataSourceTypeManager.set("");
+        System.out.println("mybatis intercept");
         return invocation.proceed();
     }
 
@@ -24,7 +32,7 @@ public class DaoExecutTime implements Interceptor {
     }
 
     public void setProperties(Properties properties) {
-
-
+        String dialect = properties.getProperty("dialect");
+        System.out.println("mybatis intercept dialect:{}" +  dialect);
     }
 }
