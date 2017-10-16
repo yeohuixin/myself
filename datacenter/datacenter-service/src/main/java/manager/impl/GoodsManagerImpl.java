@@ -34,8 +34,11 @@ public class GoodsManagerImpl implements GoodsManager {
         }
         goodsBean.setId(id);
         int count = goodsMapper.insert(goodsBean);
-        if(count == 1){
+        if (count == 1) {
+            //不回滚
             throw new MessageException();
+            //回滚
+//            throw new RuntimeException("error");
         }
         return count;
     }
