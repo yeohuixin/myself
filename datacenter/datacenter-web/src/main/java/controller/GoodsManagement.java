@@ -1,6 +1,6 @@
 package controller;
 
-import Utils.JsonUtils;
+import Utils.AbstractJsonUtils;
 import com.google.gson.reflect.TypeToken;
 import dao.bean.GoodsBean;
 import org.apache.log4j.Logger;
@@ -88,7 +88,7 @@ public class GoodsManagement {
         result.setTimestamp(new Date());
         Type type = new TypeToken<Result<String>>(){}.getType();
 
-        return JsonUtils.toJson(result, type);
+        return AbstractJsonUtils.toJson(result, type);
     }
 
     /**
@@ -130,7 +130,7 @@ public class GoodsManagement {
         coding = response.getCharacterEncoding();
         logger.info("coding after is " + coding);
 //        response.setContentType("text/html;charset=utf-8");
-        String ifo = JsonUtils.toJson(result, type);
+        String ifo = AbstractJsonUtils.toJson(result, type);
         logger.info("info is " + ifo);
         /**
          * 如果没有增加produce 需要直接使用response的writer写入不会有乱码，不能直接返回json字符串

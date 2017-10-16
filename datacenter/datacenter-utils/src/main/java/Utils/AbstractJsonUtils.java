@@ -6,16 +6,16 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 
-public abstract class JsonUtils {
+public abstract class AbstractJsonUtils {
 
-	public final static Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").serializeNulls().registerTypeAdapter(String.class, new StringConverter()).create();
+	public final static Gson GSON = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").serializeNulls().registerTypeAdapter(String.class, new StringConverter()).create();
 
 	public static String toJson(Object src) {
-		return gson.toJson(src);
+		return GSON.toJson(src);
 	}
 
 	public static String toJson(Object src, Type objType) {
-		return gson.toJson(src, objType);
+		return GSON.toJson(src, objType);
 	}
 
     public static <T> String toJson1(T obj) {
@@ -24,6 +24,6 @@ public abstract class JsonUtils {
     }
 
     public static <T> T fromJson(String json, Type typeOfT) {
-		return gson.fromJson(json, typeOfT);
+		return GSON.fromJson(json, typeOfT);
 	}
 }

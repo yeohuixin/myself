@@ -26,8 +26,9 @@ public class DisableUrlSessionFilter implements Filter {
         // clear session if session id in URL
         if (httpRequest.isRequestedSessionIdFromURL()) {
             HttpSession session = httpRequest.getSession();
-            if (session != null)
+            if (session != null) {
                 session.invalidate();
+            }
         }
         // wrap response to remove URL encoding and continue
         chain.doFilter(request, new NullEncodingHttpServletResponse(httpResponse));

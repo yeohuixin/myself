@@ -11,7 +11,7 @@ import java.util.Date;
 public class LoginContext {
 	private final static Log log = LogFactory.getLog(LoginContext.class);
 	
-	private final static ThreadLocal<LoginContext> holder = new ThreadLocal<LoginContext>();
+	private final static ThreadLocal<LoginContext> LOGIN_CONTEXT_THREAD_LOCAL = new ThreadLocal<LoginContext>();
 	
 	private static final int SESSION_TIMEOUT = 24 * 60 * 60 * 1000;	//单位：毫秒
 	
@@ -148,7 +148,7 @@ public class LoginContext {
 	 * 对象
 	 */
 	public static void setLoginContext(LoginContext loginContext) {
-		holder.set(loginContext);
+		LOGIN_CONTEXT_THREAD_LOCAL.set(loginContext);
 	}
 
 	/**
@@ -157,14 +157,14 @@ public class LoginContext {
 	 * @return null 如果没有的话
 	 */
 	public static LoginContext getLoginContext() {
-		return holder.get();
+		return LOGIN_CONTEXT_THREAD_LOCAL.get();
 	}
 
 	/**
 	 * 删除上下文、其实一般不用删除
 	 */
 	public static void remove() {
-		holder.remove();
+		LOGIN_CONTEXT_THREAD_LOCAL.remove();
 	}
 
 	/**

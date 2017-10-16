@@ -13,6 +13,7 @@ public interface UserInfoMapper {
     UserInfo selectByPrimaryKey(String userId);
     UserInfo selectByLoginname(@Param("loginName")String loginName);
     UserInfo selectByLoginnamePassword(@Param("loginName")String loginName,@Param("password")String password);
+    UserInfo selectFirst(UserInfo record);
 
     int updateByPrimaryKeySelective(UserInfo record);
 

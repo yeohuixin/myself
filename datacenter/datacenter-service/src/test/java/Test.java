@@ -28,7 +28,7 @@ public class Test {
     UserInfoService userInfoService;
 
     @org.junit.Test
-    public void test1(){
+    public void test1() throws Exception{
         UUID id = UUID.randomUUID();
         GoodsBean goodsBean = new GoodsBean();
         goodsBean.setId(id.toString());
@@ -62,12 +62,8 @@ public class Test {
     @org.junit.Test
     public void test4(){
         List<GoodsBean> goodsBeanList = goodsService.selectAll();
-
-
         if(goodsBeanList != null && !goodsBeanList.isEmpty()){
-
             System.out.println("ok");
-
             for(GoodsBean goodsBean: goodsBeanList){
                 System.out.println("goods is " + goodsBean);
             }

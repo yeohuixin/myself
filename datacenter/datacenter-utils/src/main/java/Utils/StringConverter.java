@@ -13,7 +13,7 @@ import com.google.gson.JsonSerializer;
 public class StringConverter implements JsonSerializer<String>, JsonDeserializer<String> {
 
 	public JsonElement serialize(String src, Type typeOfSrc, JsonSerializationContext context) {
-		if ( src == null || src.equalsIgnoreCase("null")) {
+		if ( src == null || "null".equalsIgnoreCase(src)) {
 		    return new JsonPrimitive("");
 		} else {
 		    return new JsonPrimitive(src.toString());

@@ -3,21 +3,66 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
     <context:component-scan base-package="service"/>
-    <import resource="spring-datasources.xml" />
+    <context:component-scan base-package="manager"/>
+    <import resource="spring-datasources.xml"/>
     <!--<mvc:annotation-driven>-->
-        <!--<mvc:message-converters>-->
-            <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
-                <!--<property name="supportedMediaTypes">-->
-                    <!--<list>-->
-                        <!--<value>application/json;charset=UTF-8</value>-->
-                    <!--</list>-->
-                <!--</property>-->
-            <!--</bean>-->
-        <!--</mvc:message-converters>-->
+    <!--<mvc:message-converters>-->
+    <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
+    <!--<property name="supportedMediaTypes">-->
+    <!--<list>-->
+    <!--<value>application/json;charset=UTF-8</value>-->
+    <!--</list>-->
+    <!--</property>-->
+    <!--</bean>-->
+    <!--</mvc:message-converters>-->
     <!--</mvc:annotation-driven>-->
     <aop:config>
 
     </aop:config>
+
+    <!-- Transaction Support -->
+    <tx:advice id="useTxAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*remove*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*save*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*modify*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*create*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*delete*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*update*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*add*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*change*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*hangup*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*submit*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+            <tx:method name="*notify*" propagation="REQUIRED" rollback-for="java.lang.Exception"
+                       no-rollback-for="core.exception.MessageException"/>
+
+            <tx:method name="*find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="*get*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="*page*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="*count*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="*select*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="*query*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="*list*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="*show*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--把事务控制在Service层-->
+    <aop:config>
+        <aop:advisor pointcut="execution(public * service.*.*(..))" advice-ref="useTxAdvice"/>
+    </aop:config>
+
 </beans>

@@ -14,7 +14,7 @@ public class DataSourceTypeManager {
 
     public static final String SLAVE = "dataSourceSlave0";
 
-    private static final ThreadLocal<String> dataSourceTypes = new ThreadLocal();
+    private static final ThreadLocal<String> DATA_SOURCE_TYPES = new ThreadLocal();
 
     public static String get() {
         String dataSource = null;
@@ -24,22 +24,22 @@ public class DataSourceTypeManager {
 //        }else {
 //            dataSource = SLAVE;
 //        }
-        dataSource = dataSourceTypes.get();
-        if(dataSource == null || dataSource.equals("")){
+        dataSource = DATA_SOURCE_TYPES.get();
+        if(dataSource == null || "".equals(dataSource)){
             dataSource = MASTER;
         }
         return dataSource;
     }
 
     public static void set(String dataSourceType) {
-        dataSourceTypes.set(dataSourceType);
+        DATA_SOURCE_TYPES.set(dataSourceType);
     }
 
     public static void reset() {
-        dataSourceTypes.remove();
+        DATA_SOURCE_TYPES.remove();
     }
 
     public static boolean isChoiceWrite() {
-        return dataSourceTypes.get() != null && dataSourceTypes.get().contains(MASTER);
+        return DATA_SOURCE_TYPES.get() != null && DATA_SOURCE_TYPES.get().contains(MASTER);
     }
 }

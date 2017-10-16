@@ -1,8 +1,10 @@
 package service.impl;
 
+import core.exception.MessageException;
 import dao.GoodsMapper;
 import dao.bean.GoodsBean;
 import dao.bean.UserInfo;
+import manager.GoodsManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,28 +24,22 @@ public class GoodsServiceImpl implements GoodsService {
     private static final Logger logger = Logger.getLogger(GoodsServiceImpl.class);
 
     @Autowired
-    private UserInfoService accountService;
-    @Resource
-    private GoodsMapper goodsMapper;
+    private GoodsManager goodsManager;
 
-    public int save(GoodsBean goodsBean) {
-        logger.info("goods Mapper start now!!");
-        String id = goodsBean.getId();
-        if(id == null){
-            id = UUID.randomUUID().toString();
+    public int save(GoodsBean goodsBean) throws Exception {
+        try{
+            return goodsManager.save(goodsBean);
+        }catch (MessageException e){
+            throw e;
+        }catch (RuntimeException e){
+            throw e;
+        } catch (Exception e) {
+            throw e;
         }
-        goodsBean.setId(id);
-        int count = goodsMapper.insert(goodsBean);
-        return count;
     }
 
     public List<GoodsBean> selectAll(){
-        logger.info("select all start");
-        List<GoodsBean> goodsBeens = goodsMapper.selectAll();
-        if(goodsBeens != null && goodsBeens.size() > 1) {
-            logger.info("all info is " + goodsBeens.get(0));
-        }
-        return goodsBeens;
+        return goodsManager.selectAll();
     }
 
 

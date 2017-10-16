@@ -1,6 +1,6 @@
 package http;
 
-import Utils.JsonUtils;
+import Utils.AbstractJsonUtils;
 import log.LogKit;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
@@ -33,9 +33,9 @@ public class CommonHttpClient {
 
     private static final int CONNECTION_TIMEOUT = 2 * 1000;
     private static final int SO_TIMEOUT = 2 * 1000;
-    private static final RequestConfig HttpRequestConfig =
+    private static final RequestConfig HTTP_REQUEST_CONFIG =
             RequestConfig.custom().setConnectTimeout(CONNECTION_TIMEOUT).setSocketTimeout(SO_TIMEOUT).build();
-    private static final String HttpContentType = ContentType.APPLICATION_JSON.getMimeType();
+    private static final String HTTP_CONTENT_TYPE = ContentType.APPLICATION_JSON.getMimeType();
 
     private static Map<String, String> newHeaderMap(String contentType, String cookieValue) {
         Map<String, String> headerMap = new HashMap<String, String>();
@@ -46,7 +46,7 @@ public class CommonHttpClient {
 
 
     public static String doGet(String url, String cookieValue, Map<String, ?> paramMap) {
-        return doGet(url, newHeaderMap(HttpContentType, cookieValue), paramMap, HttpRequestConfig);
+        return doGet(url, newHeaderMap(HTTP_CONTENT_TYPE, cookieValue), paramMap, HTTP_REQUEST_CONFIG);
     }
     public static String doGet(String url, Map<String, String> headerMap, Map<String, ?> paramMap, RequestConfig requestConfig) {
         String getUrl = newUrl(url, paramMap);
@@ -126,13 +126,13 @@ public class CommonHttpClient {
         for (Map.Entry<String, ?> entry : paramMap.entrySet()) {
             list.add(new BasicNameValuePair(entry.getKey(), entry.getValue().toString()));
         }
-        return doPost(url, newHeaderMap(HttpContentType, cookieValue), new UrlEncodedFormEntity(list, Consts.UTF_8), HttpRequestConfig);
+        return doPost(url, newHeaderMap(HTTP_CONTENT_TYPE, cookieValue), new UrlEncodedFormEntity(list, Consts.UTF_8), HTTP_REQUEST_CONFIG);
     }
     public static String doPostJson(String url, String cookieValue, Map<String, ?> paramMap) {
-        return doPost(url, cookieValue, JsonUtils.toJson(paramMap));
+        return doPost(url, cookieValue, AbstractJsonUtils.toJson(paramMap));
     }
     public static String doPost(String url, String cookieValue, String str) {
-        return doPost(url, newHeaderMap(HttpContentType, cookieValue), new StringEntity(str, Consts.UTF_8), HttpRequestConfig);
+        return doPost(url, newHeaderMap(HTTP_CONTENT_TYPE, cookieValue), new StringEntity(str, Consts.UTF_8), HTTP_REQUEST_CONFIG);
     }
     public static String doPost(String url, Map<String, String> headerMap, HttpEntity httpEntity, RequestConfig requestConfig) {
         long startTime = System.currentTimeMillis();

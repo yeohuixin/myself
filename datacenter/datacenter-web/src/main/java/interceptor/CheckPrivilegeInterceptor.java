@@ -1,32 +1,22 @@
 package interceptor;
 
-import Utils.JsonUtils;
 import Utils.SessionUtils;
-import Utils.StringUtils;
-import com.google.gson.reflect.TypeToken;
 import controller.login.LoginContext;
-import dao.bean.SysFuncResource;
 import dao.bean.UserInfo;
-import http.CommonHttpClient;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import service.UserInfoService;
 
 import javax.annotation.Resource;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by yhx on 2016/4/11.
  */
 public class CheckPrivilegeInterceptor  implements HandlerInterceptor {
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(CheckPrivilegeInterceptor.class);
+    private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.Logger.getLogger(CheckPrivilegeInterceptor.class);
     @Resource
     private UserInfoService userService;
 
@@ -41,7 +31,7 @@ public class CheckPrivilegeInterceptor  implements HandlerInterceptor {
         }
         // 如果未登录
         if (user == null) {
-            if (url.contains("/platform/toLogin") || url.contains("/platform/login") || url.equals("/") || url.equals("")) {//为了兼容IndexController的index方法
+            if (url.contains("/platform/toLogin") || url.contains("/platform/login") || "/".equals(url) || "".equals(url)) {//为了兼容IndexController的index方法
                 // 如果是去登录，就放行
                 return true;
             } else {
