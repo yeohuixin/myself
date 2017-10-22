@@ -67,7 +67,7 @@
             <!--&lt;!&ndash;<aop:after method="printTime" pointcut-ref="addAllMethod" />&ndash;&gt;-->
         <!--</aop:aspect>-->
     </aop:config>
-
     <!-- 读写分离 -->
     <bean id="dataSourceRoutingAspect" class="core.dao.aspect.DataSourceRoutingAspect"/>
+
 </beans>

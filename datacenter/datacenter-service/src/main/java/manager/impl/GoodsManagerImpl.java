@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import service.UserInfoService;
 import service.impl.GoodsServiceImpl;
 
+
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.UUID;
