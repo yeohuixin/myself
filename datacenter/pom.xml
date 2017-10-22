@@ -14,7 +14,7 @@
         <module>datacenter-utils</module>
         <module>datacenter-plug</module>
     </modules>
-    
+
     <properties>
 
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
@@ -33,6 +33,7 @@
         <log4j.version>1.2.16</log4j.version>
         <junit.version>4.10</junit.version>
         <spring.version>4.3.7.RELEASE</spring.version>
+        <aspectj-version>1.6.9</aspectj-version>
         <mybatis.version>3.2.4</mybatis.version>
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
         <mysql-connector.version>5.1.29</mysql-connector.version>
@@ -68,9 +69,9 @@
             <scope>provided</scope>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.codehaus.jackson</groupId>-->
-            <!--<artifactId>jackson-mapper-asl</artifactId>-->
-            <!--<version>1.9.4</version>-->
+        <!--<groupId>org.codehaus.jackson</groupId>-->
+        <!--<artifactId>jackson-mapper-asl</artifactId>-->
+        <!--<version>1.9.4</version>-->
         <!--</dependency>-->
         <!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version> </dependency> -->
@@ -259,6 +260,12 @@
             <artifactId>velocity-tools-view</artifactId>
             <version>${velocity-tools-view.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj-version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -270,58 +277,58 @@
                     <include>**/*.xml</include>
                 </includes>
                 <!--<excludes>-->
-                    <!--<exclude>src/main/resources/mapper/*.xml</exclude>-->
-                    <!--<exclude>src/main/resources/dev</exclude>-->
+                <!--<exclude>src/main/resources/mapper/*.xml</exclude>-->
+                <!--<exclude>src/main/resources/dev</exclude>-->
                 <!--</excludes>-->
             </resource>
             <resource>
                 <directory>src/main/resources/${resourcePath}/</directory>
             </resource>
             <!--<resource>-->
-                <!--<directory>src/main/resources/mapper/</directory>-->
+            <!--<directory>src/main/resources/mapper/</directory>-->
             <!--</resource>-->
         </resources>
         <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<artifactId>maven-resources-plugin</artifactId>-->
-                <!--<version>2.5</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>copy-xmls</id>-->
-                        <!--<goals>-->
-                            <!--<goal>copy-resources</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<outputDirectory>${basedir}/target/classes/mapper</outputDirectory>-->
-                            <!--<resources>-->
-                                <!--<resource>-->
-                                    <!--<directory>src/main/resources/mapper/</directory>-->
-                                    <!--<includes>-->
-                                        <!--<include>*.xml</include>-->
-                                    <!--</includes>-->
-                                <!--</resource>-->
-                            <!--</resources>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--&lt;!&ndash;<execution>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<id>copy-con</id>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<goals>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<goal>copy-resources</goal>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</goals>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<outputDirectory>${basedir}/target/classes/</outputDirectory>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<resources>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<resource>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<directory>src/main/resources/${resourcePath}/</directory>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<includes>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</includes>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</resource>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</resources>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</execution>&ndash;&gt;-->
-                <!--</executions>-->
-            <!--</plugin>-->
+        <!--<plugin>-->
+        <!--<artifactId>maven-resources-plugin</artifactId>-->
+        <!--<version>2.5</version>-->
+        <!--<executions>-->
+        <!--<execution>-->
+        <!--<id>copy-xmls</id>-->
+        <!--<goals>-->
+        <!--<goal>copy-resources</goal>-->
+        <!--</goals>-->
+        <!--<configuration>-->
+        <!--<outputDirectory>${basedir}/target/classes/mapper</outputDirectory>-->
+        <!--<resources>-->
+        <!--<resource>-->
+        <!--<directory>src/main/resources/mapper/</directory>-->
+        <!--<includes>-->
+        <!--<include>*.xml</include>-->
+        <!--</includes>-->
+        <!--</resource>-->
+        <!--</resources>-->
+        <!--</configuration>-->
+        <!--</execution>-->
+        <!--&lt;!&ndash;<execution>&ndash;&gt;-->
+        <!--&lt;!&ndash;<id>copy-con</id>&ndash;&gt;-->
+        <!--&lt;!&ndash;<goals>&ndash;&gt;-->
+        <!--&lt;!&ndash;<goal>copy-resources</goal>&ndash;&gt;-->
+        <!--&lt;!&ndash;</goals>&ndash;&gt;-->
+        <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
+        <!--&lt;!&ndash;<outputDirectory>${basedir}/target/classes/</outputDirectory>&ndash;&gt;-->
+        <!--&lt;!&ndash;<resources>&ndash;&gt;-->
+        <!--&lt;!&ndash;<resource>&ndash;&gt;-->
+        <!--&lt;!&ndash;<directory>src/main/resources/${resourcePath}/</directory>&ndash;&gt;-->
+        <!--&lt;!&ndash;<includes>&ndash;&gt;-->
+        <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
+        <!--&lt;!&ndash;</includes>&ndash;&gt;-->
+        <!--&lt;!&ndash;</resource>&ndash;&gt;-->
+        <!--&lt;!&ndash;</resources>&ndash;&gt;-->
+        <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
+        <!--&lt;!&ndash;</execution>&ndash;&gt;-->
+        <!--</executions>-->
+        <!--</plugin>-->
         <!--</plugins>-->
     </build>
 

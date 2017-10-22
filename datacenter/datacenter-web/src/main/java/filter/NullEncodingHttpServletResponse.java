@@ -16,20 +16,20 @@ public class NullEncodingHttpServletResponse extends HttpServletResponseWrapper 
         super(response);
     }
 
-    @Override
-    public String encodeRedirectUrl(String url) {
-        return url;
-    }
+//    @Override
+//    public String encodeRedirectUrl(String url) {
+//        return url;
+//    }
 
     @Override
     public String encodeRedirectURL(String url) {
         return url;
     }
 
-    @Override
-    public String encodeUrl(String url) {
-        return url;
-    }
+//    @Override
+//    public String encodeUrl(String url) {
+//        return url;
+//    }
 
     @Override
     public String encodeURL(String url) {

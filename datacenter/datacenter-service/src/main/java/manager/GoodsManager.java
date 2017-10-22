@@ -1,13 +1,14 @@
-package service;
+package manager;
 
 import dao.bean.GoodsBean;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by yhx on 2016/3/17.
+ * Created by D7070 on 2017/10/16.
  */
-public interface GoodsService {
+public interface GoodsManager {
     int save(GoodsBean goodsBean) throws Exception;
     List<GoodsBean> selectAll();
 }

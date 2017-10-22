@@ -3,6 +3,7 @@ package service.impl;
 import dao.UserInfoMapper;
 import dao.bean.SysFuncResource;
 import dao.bean.UserInfo;
+import manager.UserInfoManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,27 +19,19 @@ import java.util.UUID;
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
     private static final Logger logger = Logger.getLogger(UserInfoServiceImpl.class);
-    @Resource
-    UserInfoMapper userInfoMapper;
 
-    public int save(UserInfo userInfo){
-        logger.info("account save start now!!!");
-        int count = userInfoMapper.insert(userInfo);
-        return count;
+    @Autowired
+    UserInfoManager userInfoManager;
+
+    public int save(UserInfo userInfo) {
+        return userInfoManager.save(userInfo);
     }
 
-    public UserInfo getUserInfoByLoginNamePassword(String loginName,String password){
-        UserInfo userInfo = userInfoMapper.selectByLoginnamePassword(loginName, password);
-        return userInfo;
+    public UserInfo getUserInfoByLoginNamePassword(String loginName, String password) {
+        return userInfoManager.getUserInfoByLoginNamePassword(loginName, password);
     }
 
-    public UserInfo getUserInfoByLoginName(String loginName){
-        UserInfo userInfo = userInfoMapper.selectByLoginname(loginName);
-        return userInfo;
+    public UserInfo getUserInfoByLoginName(String loginName) {
+        return userInfoManager.getUserInfoByLoginName(loginName);
     }
-
-//    public List<SysFuncResource> getAllResourceByUserId(String userId) {
-//        return null;
-//    }
-
 }

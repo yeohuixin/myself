@@ -8,7 +8,7 @@ import org.aspectj.lang.JoinPoint;
 public class ControllerLog {
 
     public  void logOut(JoinPoint joinPoint, Object retValue){
-        Object object[] = joinPoint.getArgs(); // 获取被切函数 的参数
+        Object[] object = joinPoint.getArgs(); // 获取被切函数 的参数
 
         if(object != null && object.length > 1) {
             System.out.println("input is " + object[0].toString());
